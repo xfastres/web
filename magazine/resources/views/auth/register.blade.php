@@ -118,7 +118,7 @@
 <body>
     <div class="register-container">
         <h2 class="register-title">用户注册</h2>
-        
+
         @if(session('success'))
             <div class="layui-bg-green" style="padding: 10px; margin-bottom: 20px; border-radius: 5px; color: #fff;">
                 {{ session('success') }}
@@ -127,11 +127,11 @@
 
         <form class="layui-form" action="{{ route('register') }}" method="POST">
             @csrf
-            
+
             <div class="layui-form-item">
                 <label class="layui-form-label"><i class="layui-icon layui-icon-username"></i></label>
                 <div class="layui-input-block">
-                    <input type="text" name="name" lay-verify="required" placeholder="请输入用户名" 
+                    <input type="text" name="name" lay-verify="required" placeholder="请输入用户名"
                            autocomplete="off" class="layui-input" value="{{ old('name') }}">
                     @error('name')
                         <div class="error-msg">{{ $message }}</div>
@@ -142,7 +142,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label"><i class="layui-icon layui-icon-email"></i></label>
                 <div class="layui-input-block">
-                    <input type="email" name="email" lay-verify="required|email" placeholder="请输入邮箱" 
+                    <input type="email" name="email" lay-verify="required|email" placeholder="请输入邮箱"
                            autocomplete="off" class="layui-input" value="{{ old('email') }}">
                     @error('email')
                         <div class="error-msg">{{ $message }}</div>
@@ -153,7 +153,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
                 <div class="layui-input-block">
-                    <input type="password" name="password" lay-verify="required|pass" placeholder="请输入密码" 
+                    <input type="password" name="password" lay-verify="required|pass" placeholder="请输入密码"
                            autocomplete="off" class="layui-input">
                     @error('password')
                         <div class="error-msg">{{ $message }}</div>
@@ -164,7 +164,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label"><i class="layui-icon layui-icon-password"></i></label>
                 <div class="layui-input-block">
-                    <input type="password" name="password_confirmation" lay-verify="required" 
+                    <input type="password" name="password_confirmation" lay-verify="required"
                            placeholder="请确认密码" autocomplete="off" class="layui-input">
                 </div>
             </div>
