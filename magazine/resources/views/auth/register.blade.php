@@ -6,34 +6,49 @@
     <title>用户注册 - Magazine</title>
     <link rel="stylesheet" href="{{ asset('layui/css/layui.css') }}">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 15px;
         }
         .register-container {
-            width: 450px;
+            width: 100%;
+            max-width: 450px;
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            padding: 40px;
+            padding: 30px 20px;
         }
         .register-title {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             color: #333;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 600;
         }
         .layui-form-item {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .layui-form-item .layui-input {
             height: 45px;
             line-height: 45px;
             border-radius: 5px;
+        }
+        .layui-form-label {
+            width: 40px;
+            text-align: center;
+            padding: 9px 0;
+        }
+        .layui-input-block {
+            margin-left: 50px;
         }
         .submit-btn {
             width: 100%;
@@ -48,8 +63,9 @@
         }
         .login-link {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 15px;
             color: #666;
+            font-size: 14px;
         }
         .login-link a {
             color: #667eea;
@@ -62,6 +78,40 @@
             color: #ff5722;
             font-size: 12px;
             margin-top: 5px;
+        }
+        .success-msg {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            color: #fff;
+            background: #16baaa;
+            text-align: center;
+            font-size: 14px;
+        }
+        @media (max-width: 480px) {
+            .register-container {
+                padding: 25px 15px;
+                border-radius: 8px;
+            }
+            .register-title {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+            .layui-form-item .layui-input {
+                height: 42px;
+                line-height: 42px;
+                font-size: 14px;
+            }
+            .submit-btn {
+                height: 42px;
+                font-size: 15px;
+            }
+            .layui-form-label {
+                width: 35px;
+            }
+            .layui-input-block {
+                margin-left: 45px;
+            }
         }
     </style>
 </head>
