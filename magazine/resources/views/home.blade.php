@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '首页 - 杂志投稿系统')
+@section('title', '首页 - dogsshit')
 
 @section('content')
 <div class="card">
@@ -11,13 +11,13 @@
         @if($articles->count() > 0)
             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
                 @foreach($articles as $article)
-                    <div class="card" style="cursor: pointer; transition: all 0.3s;" 
+                    <div class="card" style="cursor: pointer; transition: all 0.3s;"
                          onclick="location.href='{{ route('articles.show', $article->id) }}'"
                          onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'"
                          onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 12px rgba(0,0,0,0.08)'">
                         <div style="padding: 15px;">
                             <h3 style="margin: 0 0 10px; font-size: 16px; color: #333;">
-                                <a href="{{ route('articles.show', $article->id) }}" 
+                                <a href="{{ route('articles.show', $article->id) }}"
                                    style="color: inherit; text-decoration: none;"
                                    onclick="event.stopPropagation()">
                                     {{ Str::limit($article->title, 30) }}
@@ -45,7 +45,7 @@
                     </div>
                 @endforeach
             </div>
-            
+
             <div style="text-align: center; margin-top: 30px;">
                 <a href="{{ route('articles.index') }}" class="btn-primary" style="display: inline-block; text-decoration: none;">
                     <i class="layui-icon layui-icon-more"></i> 查看更多文章

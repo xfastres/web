@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '投稿 - 杂志投稿系统')
+@section('title', '投稿 - dogsshit')
 
 @section('content')
 <div class="card">
@@ -10,16 +10,16 @@
     <div class="card-body">
         <form action="{{ route('articles.store') }}" method="POST">
             @csrf
-            
+
             <div class="form-group">
                 <label class="form-label"><span class="required">*</span> 文章标题</label>
-                <input type="text" name="title" class="form-input" 
+                <input type="text" name="title" class="form-input"
                        value="{{ old('title') }}" placeholder="请输入文章标题" required>
                 @error('title')
                     <div class="form-error">{{ $message }}</div>
                 @enderror
             </div>
-            
+
             <div class="form-group">
                 <label class="form-label"><span class="required">*</span> 文章分类</label>
                 <select name="category_id" class="form-input" required>
@@ -34,16 +34,16 @@
                     <div class="form-error">{{ $message }}</div>
                 @enderror
             </div>
-            
+
             <div class="form-group">
                 <label class="form-label"><span class="required">*</span> 文章正文</label>
-                <textarea name="content" class="form-input form-textarea" 
+                <textarea name="content" class="form-input form-textarea"
                           placeholder="请输入文章正文内容" required>{{ old('content') }}</textarea>
                 @error('content')
                     <div class="form-error">{{ $message }}</div>
                 @enderror
             </div>
-            
+
             <div style="display: flex; gap: 10px; margin-top: 30px;">
                 <button type="submit" class="btn-primary">
                     <i class="layui-icon layui-icon-ok"></i> 提交投稿
@@ -67,7 +67,7 @@
             layui.layer.msg('请检查表单填写是否正确', {icon: 2});
         });
     @endif
-    
+
     @if(session('success'))
         layui.use('layer', function(){
             layui.layer.msg('{{ session('success') }}', {icon: 1});

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '文章列表 - 杂志投稿系统')
+@section('title', '文章列表 - dogsshit')
 
 @section('content')
 <div class="layui-card">

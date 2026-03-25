@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', '杂志投稿系统')</title>
+    <title>@yield('title', 'dogsshit')</title>
     <link rel="stylesheet" href="{{ asset('layui/css/layui.css') }}">
     <style>
         * {
@@ -231,7 +231,14 @@
                 display: none;
             }
             .nav-search input {
-                width: 120px;
+                width: 100px;
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+            .nav-btn {
+                display: inline-block !important;
+                padding: 8px 10px !important;
+                font-size: 12px !important;
             }
             .main-container {
                 padding: 70px 15px 20px;
@@ -247,9 +254,9 @@
     <div class="nav-container">
         <a href="{{ route('home') }}" class="nav-logo">
             <i class="layui-icon layui-icon-read"></i>
-            杂志投稿系统
+            dogsshit
         </a>
-        
+
         <nav class="nav-links">
             <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">
                 <i class="layui-icon layui-icon-home"></i> 首页
@@ -258,17 +265,17 @@
                 <i class="layui-icon layui-icon-list"></i> 文章列表
             </a>
         </nav>
-        
+
         <div class="nav-right">
             <form class="nav-search" action="{{ route('articles.index') }}" method="GET">
                 <input type="text" name="search" placeholder="搜索文章..." value="{{ request('search') }}">
             </form>
-            
+
             @guest
-                <a href="{{ route('login') }}" class="nav-links" style="padding: 8px 16px;">
+                <a href="{{ route('login') }}" class="nav-btn" style="padding: 8px 16px; color: rgba(255,255,255,0.85); text-decoration: none; border-radius: 4px; transition: all 0.3s;">
                     <i class="layui-icon layui-icon-login"></i> 登录
                 </a>
-                <a href="{{ route('register') }}" class="nav-links" style="padding: 8px 16px; background: rgba(255,255,255,0.2); border-radius: 4px;">
+                <a href="{{ route('register') }}" class="nav-btn" style="padding: 8px 16px; color: rgba(255,255,255,0.85); text-decoration: none; border-radius: 4px; transition: all 0.3s; background: rgba(255,255,255,0.2);">
                     <i class="layui-icon layui-icon-addition"></i> 注册
                 </a>
             @else
@@ -311,7 +318,7 @@
 
 <!-- 页脚 -->
 <footer class="footer">
-    <p>&copy; {{ date('Y') }} 杂志投稿系统. All Rights Reserved.</p>
+    <p>&copy; {{ date('Y') }} dogsshit. All Rights Reserved.</p>
 </footer>
 
 <script src="{{ asset('layui/layui.js') }}"></script>
@@ -321,7 +328,7 @@
         var dropdown = document.getElementById('userDropdown');
         dropdown.classList.toggle('show');
     }
-    
+
     // 点击外部关闭下拉菜单
     document.addEventListener('click', function(e) {
         var dropdown = document.getElementById('userDropdown');
@@ -330,7 +337,7 @@
             dropdown.classList.remove('show');
         }
     });
-    
+
     layui.use(['element', 'form'], function(){
         var form = layui.form;
         form.render();
